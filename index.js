@@ -1,8 +1,8 @@
 function calcAge() {
-    let birthDay = document.getElementbirthYearId("birthDay").value;
-    let birthMonth = document.getElementbirthYearId("birthMonth").value;
-    let birthYear = document.getElementbirthYearId("birthYear").value;
-    let inputElement = document.getElementbirthYearId("input-container");
+    let birthDay = document.getElementById("birthDay").value;
+    let birthMonth = document.getElementById("birthMonth").value;
+    let birthYear = document.getElementById("birthYear").value;
+    let inputElement = document.getElementById("input-container");
 
     if(birthDay === '' || birthMonth === '' || birthYear === '') {
         inputElement.classList.add("error");
@@ -16,16 +16,16 @@ function calcAge() {
     let month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
     if (birthDay > currentDay){
-        currentDay = currentDay + month[currentMonth-1];
-        currentMonth = currentMonth-1;
+        currentDay = currentDay + month[currentMonth - 1];
+        currentMonth = currentMonth - 1;
     }
     if(birthMonth > currentMonth){
         currentMonth = currentMonth + 12;
         currentYear = currentYear - 1;
       }
 
-      let d = currentDay - birthDay;
-    let m = currentMonth - birthMonth;
+    let d = (currentDay - birthDay);
+    let m = (currentMonth - birthMonth);
     let y = (currentYear - birthYear);
 
     let yearsResultDiv = document.getElementById("yearsResult");

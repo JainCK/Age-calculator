@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+:root{
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+    --transition: all .3s;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+body{
+    background-color: var(--Off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    background-color: var(--White);
+    border-radius: 20px 20px 200px 20px;
+    width: 850px;
+    height: 650px;
+    box-shadow: 5px 5px 20px 1px rgba(0, 0, 0, 0.01);
+    padding: 60px;
+}
+
+.container .input-container {
+    display: flex;
+    gap: 30px;
+}
+
+.container .input-container .input-element {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .input-container .input-element input {
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    width: 160px;
+    height: 70px;
+    padding: 25px;
+    font-size: 32px;
+    transition: var(--transition);
+    
+} 
+.container .input-container .input-element input::placeholder{
+    color: var(--smokey-grey);
+}
+
+.container .input-container .input-element input:focus {
+    outline: none;
+    border-color: var(--purple);
+}
+
+.container .input-container .input-element label {
+    color: var(--smokey-grey);
+    font-size: 0.8em;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.divider-container{
+    display: flex;
+    align-items: center;
+}
+
+.divider-container .divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--light-grey);
+}
+
+.divider-container .icon {
+    background-color: var(--Purple);
+    border-radius: 50%;
+    padding: 23px;
+    width: 100px;
+    height: 95px;
+    transition: var(--transition);
+}
+
+.divider-container .icon:hover {
+    background-color: var(--off-black);
+    cursor: pointer;
+}
+
+
+.result-container {
+    font-size: 6.4em;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.1;
+}   
+
+.result-container span {
+    color: var(--purple);
+}
+
+.error .input-element label {
+    color: var(--light-red)!important;
+}
+
+.error .input-element input {
+    border-color: var(--light-red)!important;
+}
+
+.error .input-element:nth-child(1)::after{
+    content: 'Please Enter a Valid Date';
+    font-style: italic;
+    color: var(--light-red);
+    font-size: 0.8em;
+    position: absolute;
+    top: 200px;
+}
+
+@media screen and (max-width: 900px)  {
+    .container {
+        width: 340px;
+        padding: 24px;
+        justify-content: center;
+        height: 490px;
+        border-radius: 20px 20px 100px 20px;
+    }
+
+    .container .input-container {
+        gap: 10px;
+    }
+
+    .container .input-container .input-element input {
+        width: 90px;
+        height: 50px;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    .divider-container .divider {
+        margin-top: 60px;
+    }
+
+    .divider-container .icon {
+        padding: 15px;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 245px;
+    }
+
+   .divider-container .icon img {
+        width: 30px;
+    }
+
+    .error .input-element:nth-child(1)::after{
+        font-size: 10px;
+        top: 225px;
+    }
+
+    .result-container {
+        margin-top: 50px;
+        font-size: 3.2em;
+        line-height: 1.2;
+    }   
+}
