@@ -2,27 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="description" content="Age calculator component using HTML CSS and JS">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./style/style.css">
   <title>Frontend Mentor | Age calculator app</title>
 
 </head>
 <body>
+  <form class="container">
 
-  Day
-  DD
+    <div class="input-container" id="input-container">
+      <div class="input-element">
+        <label for="birthDay">DAY</label>
+        <input type="text" name="day" id="birthDay" placeholder="DD" required>
+      </div>
+      <div class="input-element">
+        <label for="birthDay">MONTH</label>
+        <input type="text" name="day" id="birthMonth" placeholder="MM" required>
+      </div>
+      <div class="input-element">
+        <label for="birthDay">YEAR</label>
+        <input type="text" name="day" id="birthYear" placeholder="YYYY" required>
+      </div>
+    </div>
 
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
+    <div class="divider-container">
+      <div class="divider"></div>
+      <div onclick="calcAge()" id="submitButton" class="icon"><img src="./assets/images/icon-arrow.svg" alt="icon arrow"></div>
+    </div>
+    
+    <div class="result-container">
+      <div class="result-year"><span id="yearsResult">- -</span> years</div>
+      <div class="result-month"><span id="monthsResult">- -</span> months</div>
+      <div class="result-day"><span id="daysResult">- -</span> days</div>
+    </div>
+    
+  </form>
+  <script src="index.js"></script> 
 </body>
 </html>
